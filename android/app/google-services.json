@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "933968276846",
+    "firebase_url": "https://ensayolocation.firebaseio.com",
+    "project_id": "ensayolocation",
+    "storage_bucket": "ensayolocation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933968276846:android:71bb9c027e42c8e9",
+        "android_client_info": {
+          "package_name": "com.ensayoLocation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933968276846-gh9dvipg7tb45p868jehci1nvklojrnh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw4s0VMIlC_qKly32wJb_qXJbIx3jXlwM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
