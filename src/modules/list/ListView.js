@@ -13,39 +13,46 @@ class ListView extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      rows: [
-        {name: 'Sala1'},
-        {name: 'Sala2'},
-        {name: 'Sala3'}
-      ]
+      rows: []
     }
   }
   static navigationOptions = {
     title: 'Lista de salas'
   }
-
   static propTypes = {
     navigate: PropTypes.func.isRequired,
     navigatorState: PropTypes.any.isRequired
   };
 
-  checkState = () => {
-    console.log(this.props.navigatorState)
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.roomsLoaded) {
+      this.setState({
+        rows : nextProps.rooms
+      })
+    }
+    return false
   }
-
   handlePress = () => {
-    console.log('on press')
+    console.warn('handle')
   }
   render() {
-    let rows = this.state.rows.map((room) => {
-      return <TouchableOpacity style={styles.touchContainer} key = {room['name']} onPress = {() => this.handlePress()}>
-        <View style={styles.rowContainer}>
-          <View style={styles.bodyContainer}>
-            <Text style={styles.subtitle}> {room['name']} </Text>
+    let rows = null
+    if(this.state.rows.length > 0) {
+      rows = this.state.rows.map((room) => {
+        return <TouchableOpacity style={styles.touchContainer} key = {room['name']} onPress = {() => this.handlePress()}>
+          <View style={styles.rowContainer}>
+            <View style={styles.bodyContainer}>
+              <Text style={styles.subtitle}> {room['name']} </Text>
+              <Text style={styles.subtitle}> {room['location']} </Text>
+            </View>
           </View>
-        </View>
-      </TouchableOpacity>
-    })
+        </TouchableOpacity>
+      })
+    } else {
+      rows = (
+        <Text>Loading...</Text>
+      )
+    }
 
     return (
       <View style={styles.container}>
