@@ -8,7 +8,6 @@ To start coding:
 ```
 react-native start
 react-native run-android
-
 ```
 
 on phone set ip and port of your computer
